@@ -19,4 +19,5 @@ The Python script assumes that the Minecraft server docker image is being run on
 
 # Troubleshooting
 >"Externally managed environment" error when attempting to install discord.py with pip.
+
 Your chosen distro may use its own package manager to handle Python packages. To fix this, either modify the way your server is configured, or append the --break-system-packages flag to the end of your `pip install ... ` command. 
