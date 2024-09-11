@@ -40,6 +40,20 @@ async def whitelist(ctx, option: str, user: str):
      await ctx.reply(command)
 
 @bot.command()
+@commands.has_permissions(administrator = True)
+async def op(ctx, user: str):
+    """Ops a user."""
+    command = subprocess.check_output(f"{base_command} op {user}", shell=True, text=True)
+    await ctx.reply(command)
+
+@bot.command()
+@commands.has_permissions(administrator = True)
+async def deop(ctx, user: str):
+    """Ops a user."""
+    command = subprocess.check_output(f"{base_command} deop {user}", shell=True, text=True)
+    await ctx.reply(command)
+
+@bot.command()
 async def list(ctx):
     """Lists online players"""
     command = subprocess.check_output(f"{base_command} list", shell=True, text=True)
